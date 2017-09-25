@@ -1,6 +1,7 @@
 require "sinatra"
 
 
-get "/" do
-  "Hello, galaxy"
+get "/hello/:name" do
+  @greeting_name = params[:name]
+  "Hello, #{@greeting_name.capitalize}!"
 end
